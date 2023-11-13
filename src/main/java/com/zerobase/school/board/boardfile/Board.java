@@ -1,4 +1,4 @@
-package com.zerobase.school.board.notice;
+package com.zerobase.school.board.boardfile;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
