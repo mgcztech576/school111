@@ -9,7 +9,7 @@ import javax.validation.Valid;
 
 @RequiredArgsConstructor
 @RestController
-public class UserController {
+public class UserController {//[1]
     private final UserService userService;
     private final UserRepository userRepository;
     @PostMapping("/user/create")
@@ -19,7 +19,7 @@ public class UserController {
     public User modifyUser(@PathVariable Long id, @RequestBody UserSignUp userSignUp){
          return userService.modifyUser(id,userSignUp);}
     @PostMapping("/email/exception")
-    public ResponseEntity<?> EmailException
+    public ResponseEntity<?> EmailException//[2]
             (@RequestBody @Valid UserSignUp userSignUp, Errors errors){
     if(userRepository.emailCount(userSignUp.getEmail())!=0){
         throw new EmailError("이미 있는 이메일");}
